@@ -1,0 +1,49 @@
+server:
+  port: 8080
+
+spring:
+  application: AI-SERVICE
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/ai-backend
+    username: root
+    password: Biswajit@091
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  ai:
+    openai:
+      api-key: jhfidfheifhe
+
+
+
+
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 1039867742911-najd71rtdcimltjvprn0d8h4bmg5aqnk.apps.googleusercontent.com
+            client-secret: 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
+
+            scope:
+              - openid
+              - email
+              - profile
+              - https://www.googleapis.com/auth/gmail.send
+
+
+
+          provider:
+            google:
+              authorization-uri: https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=consent
+              token-uri: https://www.googleapis.com/oauth2/token
+              user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
